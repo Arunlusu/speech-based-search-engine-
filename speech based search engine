@@ -1,0 +1,59 @@
+
+
+## 🧠 **Purpose**:
+
+To listen to your voice input, recognize your speech, and then search the spoken query on Google using your default web browser.
+
+---
+
+## 📦 **Key Libraries Used**:
+
+* `speech_recognition`: For capturing and converting speech to text.
+* `pyttsx3`: For text-to-speech (TTS) to give audio responses.
+* `webbrowser`: To open URLs in the browser.
+
+---
+
+## 🔧 **How It Works**:
+
+1. **Speech Prompt**:
+
+   * Uses `pyttsx3` to ask: *“What do you want to search for?”*
+
+2. **Listening and Recognition**:
+
+   * Records your voice using your microphone.
+   * Converts the speech to text using Google's Speech Recognition API.
+
+3. **Web Search**:
+
+   * If speech is successfully recognized, constructs a Google search URL.
+   * Opens the search in the default browser.
+   * Uses TTS to confirm: *“Here are the search results for…”*
+
+4. **Error Handling**:
+
+   * Handles unrecognized speech (`UnknownValueError`).
+   * Handles issues with the recognition service (`RequestError`).
+
+---
+
+## ▶️ **Execution Flow**:
+
+```python
+if __name__ == "__main__":
+    query = take_command()
+    search_web(query)
+```
+
+---
+
+## 📝 **Suggestions for Improvement**:
+
+* Add support for multiple search engines (e.g., Bing, DuckDuckGo).
+* Add a GUI or voice feedback confirming if the browser opened.
+* Support more commands (e.g., "open YouTube", "search images of cats").
+
+---
+
+
